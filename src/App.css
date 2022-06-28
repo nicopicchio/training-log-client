@@ -12,9 +12,17 @@
   align-items: center;
 }
 
+.homepage-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.register-login-form-container {
+  display: grid;
+  gap: 1rem;
+}
+
 .register-login-form {
   display: grid;
   gap: 1rem;
-  width: 300px;
-  padding: 1rem;
 }
