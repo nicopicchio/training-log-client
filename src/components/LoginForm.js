@@ -11,9 +11,8 @@ const emptyForm = {
 
 const loginRoute = 'http://localhost:4000/user/login';
 
-function LoginForm() {
+function LoginForm({setLoggedUser}) {
 	const [loginData, setLoginData] = useState(emptyForm);
-	const [username, setUsername] = useState(null)
 	const navigate = useNavigate();
 
 	const onLoginFormChange = (e) => {
@@ -30,7 +29,7 @@ function LoginForm() {
 			.then((res) => {
 				if (res.status === 200) {
 					localStorage.setItem('token', res.data.token)
-					setUsername(res.data.user.firstName)
+					setLoggedUser(res.data.user.firstName)
 					navigate('/menu');
 				}
 			})

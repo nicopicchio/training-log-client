@@ -1,7 +1,7 @@
 import '../App.css'
 
-function Menu() {
-	return <h1>Hello, World</h1>;
+function Menu({loggedUser}) {
+	return <h1>Hello, {loggedUser}</h1>;
 }
 
 export default Menu;
