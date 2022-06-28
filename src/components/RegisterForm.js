@@ -4,6 +4,7 @@ import { TextField, Button } from '@mui/material';
 function RegisterForm() {
 	return (
 		<div className='register-login-form-container'>
+			<h1>Register</h1>
 			<form className='register-login-form'>
 				<TextField label='Name' />
 				<TextField label='Surname' />

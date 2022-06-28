@@ -5,6 +5,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
+
 #root {
   height: 100vh;
   display: grid;
@@ -14,15 +18,19 @@
 
 .homepage-container {
   display: grid;
+  place-items: center;
   gap: 1rem;
+  padding: 2rem;
 }
 
 .register-login-form-container {
   display: grid;
   gap: 1rem;
+  width: 300px;
 }
 
 .register-login-form {
   display: grid;
   gap: 1rem;
+  width: 100%;
 }
