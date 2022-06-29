@@ -59,30 +59,35 @@ function RegisterForm() {
 					name='firstName'
 					label='First Name'
 					onChange={onRegisterFormChange}
+					required
 				/>
 				<TextField
 					type='text'
 					name='lastName'
 					label='Last Name'
 					onChange={onRegisterFormChange}
+					required
 				/>
 				<TextField
 					type='email'
 					name='email'
 					label='Email'
 					onChange={onRegisterFormChange}
+					required
 				/>
 				<TextField
 					name='password'
 					type='password'
 					label='Password'
 					onChange={onRegisterFormChange}
+					required
 				/>
 				<TextField
 					name='passwordMatch'
 					type='password'
 					label='Confirm password'
 					onChange={onRegisterFormChange}
+					required
 				/>
 				<Button type='submit' variant='contained' disableElevation size='large'>
 					Register

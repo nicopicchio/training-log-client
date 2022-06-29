@@ -9,9 +9,11 @@ const emptyForm = {
 	password: '',
 };
 
+// const failedLoginMessage = 'Invalid email and/or password!';
+
 const loginRoute = 'http://localhost:4000/user/login';
 
-function LoginForm({setLoggedUser}) {
+function LoginForm({ setLoggedUser }) {
 	const [loginData, setLoginData] = useState(emptyForm);
 	const navigate = useNavigate();
 
@@ -28,8 +30,8 @@ function LoginForm({setLoggedUser}) {
 			})
 			.then((res) => {
 				if (res.status === 200) {
-					localStorage.setItem('token', res.data.token)
-					setLoggedUser(res.data.user.firstName)
+					localStorage.setItem('token', res.data.token);
+					setLoggedUser(res.data.user.firstName);
 					navigate('/menu');
 				}
 			})
@@ -42,7 +44,7 @@ function LoginForm({setLoggedUser}) {
 
 	const onLoginFormSubmit = (e) => {
 		e.preventDefault();
-		logUser()
+		logUser();
 	};
 
 	return (
