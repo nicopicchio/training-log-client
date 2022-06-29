@@ -5,17 +5,17 @@
   font-family: 'Roboto', sans-serif;
 }
 
-h1,
-p,
-#failed-login-register-error {
-  text-align: center;
-}
-
-#root {
+body {
   height: 100vh;
   display: grid;
   place-content: center;
   align-items: center;
+}
+
+h1,
+p,
+#failed-login-register-error {
+  text-align: center;
 }
 
 #failed-login-register-error {
@@ -46,10 +46,8 @@ p,
   text-decoration: none;
 }
 
-.theme-selector {
+.theme-selector-container {
   display: flex;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  margin-bottom: 2rem;
+  justify-content: center;
 }

@@ -2,16 +2,11 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { Switch } from '@mui/material';
 
-function ThemeSelector() {
-
-  const handleSwitch = (e) => {
-		console.log(e.target.checked)
-	}
-
+function ThemeSelector({ onThemeSelectorChange }) {
 	return (
-		<div className='theme-selector'>
+		<div className='theme-selector-container'>
 			<LightModeIcon />
-			<Switch onChange={handleSwitch}/>
+			<Switch onChange={onThemeSelectorChange} />
 			<DarkModeIcon />
 		</div>
 	);
