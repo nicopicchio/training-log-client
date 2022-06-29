@@ -6,7 +6,8 @@
 }
 
 h1,
-#failed-login-error {
+p,
+#failed-login-register-error {
   text-align: center;
 }
 
@@ -17,8 +18,9 @@ h1,
   align-items: center;
 }
 
-#failed-login-error {
+#failed-login-register-error {
   color: red;
+  font-weight: bold;
 }
 
 .homepage-container {
@@ -38,4 +40,9 @@ h1,
   display: grid;
   gap: 1rem;
   width: 100%;
+}
+
+.links {
+  text-decoration: none;
+  color: ;
 }

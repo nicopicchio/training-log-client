@@ -2,7 +2,7 @@ import '../App.css';
 import axios from 'axios';
 import { TextField, Button } from '@mui/material';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const emptyForm = {
 	firstName: '',
@@ -16,6 +16,7 @@ const registerRoute = 'http://localhost:4000/user/register';
 
 function RegisterForm() {
 	const [registerData, setRegisterData] = useState(emptyForm);
+	const [failedRegister, setFailedRegister] = useState(false);
 	const navigate = useNavigate();
 
 	const onRegisterFormChange = (e) => {
@@ -33,14 +34,13 @@ function RegisterForm() {
 					password: registerData.password,
 				})
 				.then((res) => {
-					if (res.status === 200) {
+					if (res.status === 201) {
 						navigate('/login');
 					}
 				})
 				.catch((err) => {
-					if (err) {
-						console.log('error: ', err.response.data);
-					}
+					const errorMessage = err.response.data;
+					setFailedRegister(errorMessage);
 				});
 		}
 	};
@@ -53,6 +53,9 @@ function RegisterForm() {
 	return (
 		<div className='register-login-form-container'>
 			<h1>Register</h1>
+			{failedRegister && (
+				<p id='failed-login-register-error'>{failedRegister}</p>
+			)}
 			<form className='register-login-form' onSubmit={onRegisterFormSubmit}>
 				<TextField
 					type='text'
@@ -93,6 +96,7 @@ function RegisterForm() {
 					Register
 				</Button>
 			</form>
+			<p>Already registered? <Link to='/login' className='links'>Login</Link></p>
 		</div>
 	);
 }

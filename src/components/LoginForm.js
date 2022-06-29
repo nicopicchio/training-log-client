@@ -2,14 +2,12 @@ import '../App.css';
 import axios from 'axios';
 import { TextField, Button } from '@mui/material';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const emptyForm = {
 	email: '',
 	password: '',
 };
-
-const failedLoginMessage = 'Invalid email and/or password!';
 
 const loginRoute = 'http://localhost:4000/user/login';
 
@@ -37,11 +35,8 @@ function LoginForm({ setLoggedUser }) {
 				}
 			})
 			.catch((err) => {
-				if (err) {
-					console.log('error: ', err);
-					const errorMessage = err.response.data;
-					setFailedLogin(errorMessage);
-				}
+				const errorMessage = err.response.data;
+				setFailedLogin(errorMessage);
 			});
 	};
 
@@ -53,9 +48,14 @@ function LoginForm({ setLoggedUser }) {
 	return (
 		<div className='register-login-form-container'>
 			<h1>Login</h1>
-			{failedLogin && <p id='failed-login-error'>{failedLogin}</p>}
+			{failedLogin && <p id='failed-login-register-error'>{failedLogin}</p>}
 			<form className='register-login-form' onSubmit={onLoginFormSubmit}>
-				<TextField name='email' label='Email' onChange={onLoginFormChange} required/>
+				<TextField
+					name='email'
+					label='Email'
+					onChange={onLoginFormChange}
+					required
+				/>
 				<TextField
 					name='password'
 					type='password'
@@ -67,6 +67,7 @@ function LoginForm({ setLoggedUser }) {
 					Login
 				</Button>
 			</form>
+			<p>Not registered yet? <Link to='/register' className='links'>Register</Link></p>
 		</div>
 	);
 }
