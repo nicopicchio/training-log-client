@@ -44,5 +44,12 @@ p,
 
 .links {
   text-decoration: none;
-  color: ;
+}
+
+.theme-selector {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 2rem;
 }

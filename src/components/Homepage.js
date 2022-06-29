@@ -1,6 +1,7 @@
 import '../App.css';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import ThemeSelector from '../components/ThemeSelector';
 
 function Homepage() {
 	const navigate = useNavigate();
@@ -32,6 +33,7 @@ function Homepage() {
 					Register
 				</Button>
 			</div>
+			<ThemeSelector />
 		</div>
 	);
 }
