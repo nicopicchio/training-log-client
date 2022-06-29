@@ -5,7 +5,8 @@
   font-family: 'Roboto', sans-serif;
 }
 
-h1 {
+h1,
+#failed-login-error {
   text-align: center;
 }
 
@@ -14,6 +15,10 @@ h1 {
   display: grid;
   place-content: center;
   align-items: center;
+}
+
+#failed-login-error {
+  color: red;
 }
 
 .homepage-container {

@@ -1,6 +1,6 @@
-import '../App.css'
+import '../App.css';
 
-function Menu({loggedUser}) {
+function Menu({ loggedUser }) {
 	return <h1>Hello, {loggedUser}</h1>;
 }
 

@@ -9,12 +9,13 @@ const emptyForm = {
 	password: '',
 };
 
-// const failedLoginMessage = 'Invalid email and/or password!';
+const failedLoginMessage = 'Invalid email and/or password!';
 
 const loginRoute = 'http://localhost:4000/user/login';
 
 function LoginForm({ setLoggedUser }) {
 	const [loginData, setLoginData] = useState(emptyForm);
+	const [failedLogin, setFailedLogin] = useState(false);
 	const navigate = useNavigate();
 
 	const onLoginFormChange = (e) => {
@@ -38,6 +39,8 @@ function LoginForm({ setLoggedUser }) {
 			.catch((err) => {
 				if (err) {
 					console.log('error: ', err);
+					const errorMessage = err.response.data;
+					setFailedLogin(errorMessage);
 				}
 			});
 	};
@@ -50,13 +53,15 @@ function LoginForm({ setLoggedUser }) {
 	return (
 		<div className='register-login-form-container'>
 			<h1>Login</h1>
+			{failedLogin && <p id='failed-login-error'>{failedLogin}</p>}
 			<form className='register-login-form' onSubmit={onLoginFormSubmit}>
-				<TextField name='email' label='Email' onChange={onLoginFormChange} />
+				<TextField name='email' label='Email' onChange={onLoginFormChange} required/>
 				<TextField
 					name='password'
 					type='password'
 					label='Password'
 					onChange={onLoginFormChange}
+					required
 				/>
 				<Button type='submit' variant='contained' disableElevation size='large'>
 					Login
