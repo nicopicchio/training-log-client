@@ -1,5 +1,5 @@
 import './App.css';
-import Homepage from '../src/components/Homepage';
+import Homepage from './components/Homepage';
 import RegisterForm from '../src/components/RegisterForm';
 import LoginForm from '../src/components/LoginForm';
 import Menu from '../src/components/Menu';

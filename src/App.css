@@ -18,6 +18,10 @@ p,
   text-align: center;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
 #failed-login-register-error {
   color: red;
   font-weight: bold;
@@ -26,11 +30,12 @@ p,
 .homepage-container {
   display: grid;
   place-items: center;
-  gap: 1rem;
+  gap: 2rem;
   padding: 2rem;
 }
 
-.register-login-form-container {
+.register-login-form-container,
+.main-menu-container {
   display: grid;
   gap: 1rem;
   width: 300px;
@@ -46,8 +51,8 @@ p,
   text-decoration: none;
 }
 
-.theme-selector-container {
+/* .theme-selector-container {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */

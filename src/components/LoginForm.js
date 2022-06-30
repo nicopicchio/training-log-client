@@ -3,7 +3,7 @@ import axios from 'axios';
 import { TextField, Button } from '@mui/material';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import ThemeSelector from '../components/ThemeSelector';
+// import ThemeSelector from '../components/ThemeSelector';
 
 const emptyForm = {
 	email: '',
@@ -74,7 +74,7 @@ function LoginForm({ setLoggedUser }) {
 					Register
 				</Link>
 			</p>
-			<ThemeSelector />
+			{/* <ThemeSelector /> */}
 		</div>
 	);
 }

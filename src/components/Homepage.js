@@ -1,7 +1,8 @@
 import '../App.css';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import ThemeSelector from '../components/ThemeSelector';
+import Logo from '../assets/training-log-logo.png'
+// import ThemeSelector from '../components/ThemeSelector';
 
 function Homepage() {
 	const navigate = useNavigate();
@@ -14,14 +15,15 @@ function Homepage() {
 		navigate('/register');
 	};
 
-	const onThemeSelectorChange = (e) => {
-		console.log(e.target.checked);
-	};
+	// const onThemeSelectorChange = (e) => {
+	// 	console.log(e.target.checked);
+	// };
 
 	return (
 		<>
 			<div className='homepage-container'>
-				<h1>Welcome to Training Log</h1>
+				<img src={Logo} alt='main logo' width='300px'/>
+				<h1>Training Log</h1>
 				<div className='register-login-form-container'>
 					<Button
 						onClick={onLoginClick}
@@ -39,7 +41,7 @@ function Homepage() {
 					</Button>
 				</div>
 			</div>
-			<ThemeSelector onThemeSelectorChange={onThemeSelectorChange} />
+			{/* <ThemeSelector onThemeSelectorChange={onThemeSelectorChange} /> */}
 		</>
 	);
 }
