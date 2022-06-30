@@ -52,7 +52,7 @@ function RegisterForm() {
 	};
 
 	return (
-		<div className='register-login-form-container'>
+		<div className='form-container'>
 			<h1>Register</h1>
 			{failedRegister && (
 				<p id='failed-login-register-error'>{failedRegister}</p>

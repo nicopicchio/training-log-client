@@ -47,7 +47,7 @@ function LoginForm({ setLoggedUser }) {
 	};
 
 	return (
-		<div className='register-login-form-container'>
+		<div className='form-container'>
 			<h1>Login</h1>
 			{failedLogin && <p id='failed-login-register-error'>{failedLogin}</p>}
 			<form className='register-login-form' onSubmit={onLoginFormSubmit}>

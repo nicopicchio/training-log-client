@@ -19,7 +19,7 @@ p,
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 #failed-login-register-error {
@@ -34,7 +34,7 @@ h1 {
   padding: 2rem;
 }
 
-.register-login-form-container,
+.form-container,
 .main-menu-container {
   display: grid;
   gap: 1rem;

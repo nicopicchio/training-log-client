@@ -24,7 +24,7 @@ function Homepage() {
 			<div className='homepage-container'>
 				<img src={Logo} alt='main logo' width='300px'/>
 				<h1>Training Log</h1>
-				<div className='register-login-form-container'>
+				<div className='form-container'>
 					<Button
 						onClick={onLoginClick}
 						variant='contained'
