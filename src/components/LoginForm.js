@@ -3,6 +3,9 @@ import axios from 'axios';
 import { TextField, Button } from '@mui/material';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import InputAdornment from '@mui/material/InputAdornment';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import PasswordIcon from '@mui/icons-material/Password';
 // import ThemeSelector from '../components/ThemeSelector';
 
 const emptyForm = {
@@ -56,6 +59,13 @@ function LoginForm({ setLoggedUser }) {
 					label='Email'
 					onChange={onLoginFormChange}
 					required
+					InputProps={{
+						startAdornment: (
+							<InputAdornment position='start'>
+								<AccountCircle />
+							</InputAdornment>
+						),
+					}}
 				/>
 				<TextField
 					name='password'
@@ -63,6 +73,13 @@ function LoginForm({ setLoggedUser }) {
 					label='Password'
 					onChange={onLoginFormChange}
 					required
+					InputProps={{
+						startAdornment: (
+							<InputAdornment position='start'>
+								<PasswordIcon />
+							</InputAdornment>
+						),
+					}}
 				/>
 				<Button type='submit' variant='contained' disableElevation size='large'>
 					Login
