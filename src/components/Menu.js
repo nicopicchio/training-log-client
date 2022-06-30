@@ -5,19 +5,19 @@ import { useNavigate } from 'react-router-dom';
 function Menu({ loggedUser }) {
 	const navigate = useNavigate();
 
-	const handleAddDataset = () => {
+	const handleAddDatasetBtn = () => {
 		navigate('/add-dataset');
 	};
 
 	return (
 		<>
 			<div className='main-menu-container'>
-				<h1>Hello, {loggedUser}</h1>
+				<h1>Hello, {loggedUser.firstName}</h1>
 				<Button
 					variant='contained'
 					disableElevation
 					size='large'
-					onClick={handleAddDataset}>
+					onClick={handleAddDatasetBtn}>
 					Add dataset
 				</Button>
 				<Button variant='contained' disableElevation size='large'>

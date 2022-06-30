@@ -34,7 +34,7 @@ function LoginForm({ setLoggedUser }) {
 			.then((res) => {
 				if (res.status === 200) {
 					localStorage.setItem('token', res.data.token);
-					setLoggedUser(res.data.user.firstName);
+					setLoggedUser(res.data.user);
 					navigate('/menu');
 				}
 			})

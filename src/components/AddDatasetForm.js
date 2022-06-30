@@ -1,12 +1,20 @@
 import { TextField, Button } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import { useNavigate } from 'react-router-dom';
+import {useState} from 'react'
 
 function AddDatasetForm() {
+	const [dataset, setDataset] = useState(null)
 	const navigate = useNavigate();
+
+	const onDatasetFormChange = (e) => {
+		const { name, value } = e.target;
+		setDataset({ ...dataset, [name]: value });
+	};
+
 	const handleSubmitDataset = (e) => {
 		e.preventDefault();
-		console.log('dataset added');
+		
 	};
 	const handleCancel = (e) => {
 		e.preventDefault();
@@ -15,7 +23,7 @@ function AddDatasetForm() {
 	return (
 		<div className='form-container'>
 			<h1>New Dataset</h1>
-			<form className='register-login-form'>
+			<form className='register-login-form' onSubmit={handleSubmitDataset}>
 				<TextField
 					type='text'
 					name='restHR'
@@ -38,14 +46,6 @@ function AddDatasetForm() {
 					label='Sleep'
 					InputProps={{
 						endAdornment: <InputAdornment position='end'>hrs</InputAdornment>,
-					}}
-				/>
-				<TextField
-					type='text'
-					name='training'
-					label='Training Score'
-					InputProps={{
-						endAdornment: <InputAdornment position='end'>0-3</InputAdornment>,
 					}}
 				/>
 				<TextField
