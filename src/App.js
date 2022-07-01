@@ -9,14 +9,15 @@ import { useState } from 'react';
 
 function App() {
 	const [loggedUser, setLoggedUser] = useState(null);
+	console.log(loggedUser);
 	return (
 		<>
 			<Routes>
 				<Route path='/' element={<Homepage />} />
 				<Route path='/register' element={<RegisterForm />} />
-				<Route path='/login' element={<LoginForm setLoggedUser={setLoggedUser} />}	/>
+				<Route path='/login' element={<LoginForm setLoggedUser={setLoggedUser} />} />
 				<Route path='/menu' element={<Menu loggedUser={loggedUser} />} />
-				<Route path='/add-dataset' element={<AddDatasetForm />} />
+				<Route path='/add-dataset' element={<AddDatasetForm loggedUser={loggedUser} />} />
 			</Routes>
 		</>
 	);

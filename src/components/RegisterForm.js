@@ -13,7 +13,7 @@ const emptyForm = {
 	passwordMatch: '',
 };
 
-const registerRoute = 'http://localhost:4000/user/register';
+const registerUserRoute = 'http://localhost:4000/user/register';
 
 function RegisterForm() {
 	const [registerData, setRegisterData] = useState(emptyForm);
@@ -28,7 +28,7 @@ function RegisterForm() {
 	const registerUser = () => {
 		if (registerData.password === registerData.passwordMatch) {
 			axios
-				.post(registerRoute, {
+				.post(registerUserRoute, {
 					firstName: registerData.firstName,
 					lastName: registerData.lastName,
 					email: registerData.email,
