@@ -1,7 +1,13 @@
 import '../App.css';
+import SleepChart from './SleepChart';
 
-function Dashbaord() {
-  return <h1>Welcome to your dashboard!</h1>
+function Dashboard() {
+	return (
+		<>
+			<h1>Dashboard</h1>
+			<SleepChart />
+		</>
+	);
 }
 
-export default Dashbaord;
+export default Dashboard;
