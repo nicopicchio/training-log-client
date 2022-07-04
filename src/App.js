@@ -6,6 +6,7 @@ import Menu from '../src/components/Menu';
 import AddDatasetForm from './components/AddDatasetForm';
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
+import Dashboard from '../src/components/Dashboard';
 
 function App() {
 	const [loggedUser, setLoggedUser] = useState(null);
@@ -18,6 +19,7 @@ function App() {
 				<Route path='/login' element={<LoginForm setLoggedUser={setLoggedUser} />} />
 				<Route path='/menu' element={<Menu loggedUser={loggedUser} />} />
 				<Route path='/add-dataset' element={<AddDatasetForm loggedUser={loggedUser} />} />
+				<Route path='/dashboard' element={<Dashboard /> } />
 			</Routes>
 		</>
 	);

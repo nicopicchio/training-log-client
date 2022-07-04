@@ -16,20 +16,29 @@ function AddDatasetForm({ loggedUser }) {
 	};
 
 	const addDataset = () => {
-		axios.patch(addDatasetRoute, {
-			userId: loggedUser._id,
-			restHR: dataset.restHR,
-			weight: dataset.weight,
-			sleep: dataset.sleep,
-			fatigue: dataset.fatigue,
-		})
-		.then((res) => {
-			console.log(res)
-			navigate('/dashboard')
-		})
-		.catch((err) => {
-			console.log(err)
-		})
+		axios
+			.patch(
+				addDatasetRoute,
+				{
+					userId: loggedUser._id,
+					restHR: dataset.restHR,
+					weight: dataset.weight,
+					sleep: dataset.sleep,
+					fatigue: dataset.fatigue,
+				},
+				{
+					headers: {
+						'Authorization': `Bearer ${localStorage.getItem('token')}`,
+					},
+				}
+			)
+			.then((res) => {
+				console.log(res);
+				navigate('/dashboard');
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	};
 
 	const handleSubmitDataset = (e) => {
