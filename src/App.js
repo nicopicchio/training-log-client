@@ -19,7 +19,7 @@ function App() {
 				<Route path='/login' element={<LoginForm setLoggedUser={setLoggedUser} />} />
 				<Route path='/menu' element={<Menu loggedUser={loggedUser} />} />
 				<Route path='/add-dataset' element={<AddDatasetForm loggedUser={loggedUser} />} />
-				<Route path='/dashboard' element={<Dashboard /> } />
+				<Route path='/dashboard' element={<Dashboard loggedUser={loggedUser}/> } />
 			</Routes>
 		</>
 	);

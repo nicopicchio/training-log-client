@@ -1,11 +1,11 @@
 import '../App.css';
 import SleepChart from './SleepChart';
 
-function Dashboard() {
+function Dashboard({ loggedUser }) {
 	return (
 		<>
 			<h1>Dashboard</h1>
-			<SleepChart />
+			<SleepChart loggedUser={loggedUser}/>
 		</>
 	);
 }
