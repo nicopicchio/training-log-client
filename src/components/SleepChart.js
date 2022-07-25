@@ -17,23 +17,24 @@ function SleepChart({ loggedUser }) {
 	});
 
 	const getSleepData = () => {
-		axios.get(
-			getDataRoute,
-			{
-				userId: loggedUser.id,
-			},
-			{
-				headers: {
-					Authorization: `Bearer ${localStorage.getItem('token')}`,
+		axios
+			.get(
+				getDataRoute,
+				{
+					userId: loggedUser.id,
 				},
-			}
-		)
-		.then((res) => {
-			console.log(res);
-		})
-		.catch((err) => {
-			console.log(err);
-		});
+				{
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem('token')}`,
+					},
+				}
+			)
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	};
 
 	return <Line data={data} />;

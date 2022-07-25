@@ -1,7 +1,7 @@
 import '../App.css';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../assets/training-log-logo.png'
+import Logo from '../assets/training-log-logo.png';
 // import ThemeSelector from '../components/ThemeSelector';
 
 function Homepage() {
@@ -22,7 +22,7 @@ function Homepage() {
 	return (
 		<>
 			<div className='homepage-container'>
-				<img src={Logo} alt='main logo' width='300px'/>
+				<img src={Logo} alt='main logo' width='300px' />
 				<h1>Training Log</h1>
 				<div className='form-container'>
 					<Button

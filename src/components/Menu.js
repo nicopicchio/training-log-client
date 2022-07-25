@@ -10,8 +10,8 @@ function Menu({ loggedUser }) {
 	};
 
 	const handleGoToDashboardBtn = () => {
-		navigate('/dashboard')
-	}
+		navigate('/dashboard');
+	};
 
 	return (
 		<>
@@ -24,7 +24,11 @@ function Menu({ loggedUser }) {
 					onClick={handleAddDatasetBtn}>
 					Add dataset
 				</Button>
-				<Button variant='contained' disableElevation size='large' onClick={handleGoToDashboardBtn}>
+				<Button
+					variant='contained'
+					disableElevation
+					size='large'
+					onClick={handleGoToDashboardBtn}>
 					Go to Dashboard
 				</Button>
 			</div>

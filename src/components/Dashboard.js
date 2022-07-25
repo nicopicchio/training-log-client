@@ -5,7 +5,7 @@ function Dashboard({ loggedUser }) {
 	return (
 		<>
 			<h1>Dashboard</h1>
-			<SleepChart loggedUser={loggedUser}/>
+			<SleepChart loggedUser={loggedUser} />
 		</>
 	);
 }
